@@ -1,0 +1,22 @@
+/* naviagation & header */
+header {
+    background: #BF879A;
+    font-family: 'Darker Grotesque', sans-serif;
+    font-size: 20px;
+    font-style: bold;
+    color: whitesmoke
+}
+
+body {
+   background: whitesmoke; 
+   font-family: 'Libre Franklin', sans-serif;
+   font-size: 16px;
+   color: #2b2d2f;
+}
+
+h1 {
+    font-family: 'Libre Franklin', sans-serif;
+    font-size: 18px;
+    font-style: bold;
+    color: #2b2d2f;
+}

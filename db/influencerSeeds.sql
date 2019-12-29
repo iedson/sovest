@@ -1,0 +1,11 @@
+INSERT INTO influencers (name, ig_handle, followers) VALUES ('Jen Reed', 'thesisterstudioig', 706000);
+INSERT INTO influencers (name, ig_handle, followers) VALUES ('Courtney Shields', 'courtney_shields', 577000);
+INSERT INTO influencers (name, ig_handle, followers) VALUES ('Amy Jackson', 'fashion_jackson', 555000);
+INSERT INTO influencers (name, ig_handle, followers) VALUES ('Julia Marcum', 'chrislovesjulia', 346000);
+INSERT INTO influencers (name, ig_handle, followers) VALUES ('Sandi + Shalia', 'thespoiledhome', 321000);
+INSERT INTO influencers (name, ig_handle, followers) VALUES ('Brooke + Meggan', 'somewherelatley', 266000);
+INSERT INTO influencers (name, ig_handle, followers) VALUES ('Liz Joy', 'purejoyhome', 207000);
+INSERT INTO influencers (name, ig_handle, followers) VALUES ('Liz Adams', 'lizadams', 153000);
+INSERT INTO influencers (name, ig_handle, followers) VALUES ('Katie Staples', 'halfway_wholeistic', 138000);
+INSERT INTO influencers (name, ig_handle, followers) VALUES ('Lisa Allen', 'lisa_allen', 110000);
+INSERT INTO influencers (name, ig_handle, followers) VALUES ('Kelly Larkin', 'kellyinthecity', 95200);

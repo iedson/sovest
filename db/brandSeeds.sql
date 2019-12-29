@@ -1,0 +1,14 @@
+INSERT INTO brands (name, ticker_symbol) VALUES ('Walmart', 'WMT');
+INSERT INTO brands (name, ticker_symbol) VALUES ('Abercrombie', 'ANF');
+INSERT INTO brands (name, ticker_symbol) VALUES ('Home Chef', 'KR');
+INSERT INTO brands (name, ticker_symbol) VALUES ('Express', 'EXPR');
+INSERT INTO brands (name, ticker_symbol) VALUES ('Target', 'TGT');
+INSERT INTO brands (name, ticker_symbol) VALUES ('eBay', 'EBAY');
+INSERT INTO brands (name, ticker_symbol) VALUES ('Nordstrom', 'JWN');
+INSERT INTO brands (name, ticker_symbol) VALUES ('American Express', 'AXP');
+INSERT INTO brands (name, ticker_symbol) VALUES ('Aerie/American Eagle', 'AEO');
+INSERT INTO brands (name, ticker_symbol) VALUES ('QVC', 'QRTEA');
+INSERT INTO brands (name, ticker_symbol) VALUES ('Blommingdales', 'M');
+INSERT INTO brands (name, ticker_symbol) VALUES ('Macys', 'M');
+INSERT INTO brands (name, ticker_symbol) VALUES ('Blue Mercury', 'M');
+INSERT INTO brands (name, ticker_symbol) VALUES ('ADT Security', 'ADT');

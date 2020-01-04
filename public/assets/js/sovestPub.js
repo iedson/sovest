@@ -1,6 +1,14 @@
-$(function() {
-    $("#inflBtn").on("click", function(event) {
+$(document).ready(function() {
+  iexcloudKey = "pk_cd9b9d66c0894584a1e3f9e96ca230a1";
 
-console.log("hello world")
-    })
-})
+  function initGraph() {
+    var queryUrl = `https://cloud.iexapis.com/stable/stock/twtr/chart?token=${iexcloudKey}`;
+    $.ajax({
+      url: queryUrl,
+      method: "GET"
+    }).then(function(response) {
+      console.log(response);
+    });
+  }
+  initGraph();
+});

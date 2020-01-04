@@ -11,7 +11,7 @@ if (process.env.JAWSDB_URL) {
     port: 3306,
     user: "root",
     password: "youllneverguessit",
-    database: "influencers_db"
+    database: "influencer_db"
   });
 }
 

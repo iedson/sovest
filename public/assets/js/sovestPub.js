@@ -11,10 +11,11 @@ $(document).ready(function () {
     });
   }
   initGraph();
-});
+
 
 $("#inflBtn").on("click", function(event) {
 
+  console.log('hello')
 
 
 })
@@ -24,6 +25,9 @@ $("#addBtn").on("click", function(event) {
   var name = $("#nameInput").val().trim();
   var handle = $("#handleInput").val().trim();
 
-  console.log(name, handle)
+  console.log(name)
+  console.log(handle)
 
 })
+
+});

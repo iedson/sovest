@@ -12,3 +12,18 @@ $(document).ready(function () {
   }
   initGraph();
 });
+
+$("#inflBtn").on("click", function(event) {
+
+
+
+})
+
+$("#addBtn").on("click", function(event) {
+
+  var name = $("#nameInput").val().trim();
+  var handle = $("#handleInput").val().trim();
+
+  console.log(name, handle)
+
+})

@@ -7,7 +7,12 @@ var sovest = {
       cb(res);
     });
   },
- 
+  create: function(cols, vals, cb) {
+    orm.create("influencers", cols, vals, function(res) {
+      cb(res);
+    });
+  },
+  
 };
 
 // Export the database functions for the controller (sovestsController.js).

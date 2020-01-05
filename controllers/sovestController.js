@@ -3,16 +3,27 @@ var express = require("express");
 var router = express.Router();
 
 // Import the model (cat.js) to use its database functions.
-var burger = require("../models/sovest.js");
+var sovestModel = require("../models/sovest.js");
 
 // Create all our routes and set up logic within those routes where required.
 router.get("/", function(req, res) {
-  burger.all(function(data) {
+  sovestModel.all(function(data) {
     var hbsObject = {
       influencers: data
     };
     console.log(hbsObject);
     res.render("index", hbsObject);
+  });
+});
+
+router.post("/api/influencers", function(req, res) {
+  sovestModel.create([
+    "name", "ig_handle", "followers", "brand", "date_posted"
+  ], [
+    req.body.name, req.body.ig_handle, req.body.followers, req.body.brand, req.body.date_posted
+  ], function(result) {
+    // Send back the ID of the new quote
+    res.json({ id: result.insertId });
   });
 });
 

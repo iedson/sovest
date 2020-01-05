@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(document).ready(function () {
   iexcloudKey = "pk_cd9b9d66c0894584a1e3f9e96ca230a1";
 
   function initGraph() {
@@ -6,7 +6,7 @@ $(document).ready(function() {
     $.ajax({
       url: queryUrl,
       method: "GET"
-    }).then(function(response) {
+    }).then(function (response) {
       console.log(response);
     });
   }

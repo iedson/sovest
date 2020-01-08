@@ -14,19 +14,34 @@ $(document).ready(function() {
   }
   initGraph();
 
-  $("#inflBtn").on("click", function(event) {
-    console.log("hello");
-  });
 
-  $("#addBtn").on("click", function(event) {
-    var name = $("#nameInput")
-      .val()
-      .trim();
-    var handle = $("#handleInput")
-      .val()
-      .trim();
 
-    console.log(name);
-    console.log(handle);
-  });
+
+//call influencers table SELECT *
+  $("#inflBtn").on("click", function (event) {
+    console.log('hello')
+  })
+
+
+
+  //enter an influencer into the db
+  $("#addBtn").on("click", function (event) {
+
+    let newInfl = {
+      name: $("#nameInput").val().trim(),
+      handle: $("#handleInput").val().trim()
+    };
+
+    $.ajax("/api/influencers", {
+      type: "POST",
+      data: newInfl
+    }).then(
+      function () {
+        console.log("entered");
+        // Reload the page to get the updated list
+        //location.reload();
+      }
+    );
+  })
 });
+

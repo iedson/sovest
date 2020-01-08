@@ -36,7 +36,12 @@
         <div id="my_dataviz"></div>
     </div>
     <div class="row">
-        <button id="inflBtn">See All Influencers</button i>
+        <button id="inflBtn">See All Influencers</button>
+
+        <div id="cards">
+            {{> influencers/infl-block }}
+        </div>
+
     </div>
 
     <div class="row">
@@ -47,6 +52,8 @@
         <input class="" id="handleInput" name="handle" type="text" placeholder="Enter Instagram Handle..." />
 
         <button id="addBtn">Add Partner</button>
+
+
     </div>
 </div>
 <script>

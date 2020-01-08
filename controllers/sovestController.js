@@ -18,9 +18,9 @@ router.get("/", function(req, res) {
 
 router.post("/api/influencers", function(req, res) {
   sovestModel.create([
-    "name", "ig_handle", "followers", "brand", "date_posted"
+    "inf_name", "ig_handle"
   ], [
-    req.body.name, req.body.ig_handle, req.body.followers, req.body.brand, req.body.date_posted
+    req.body.inf_name, req.body.ig_handle
   ], function(result) {
     // Send back the ID of the new quote
     res.json({ id: result.insertId });

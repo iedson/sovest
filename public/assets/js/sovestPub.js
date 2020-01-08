@@ -42,7 +42,7 @@ $(document).ready(function() {
     }).then(
       function () {
         console.log("entered");
-        // Reload the page to get the updated list
+        // Reload the page t3o get the updated list
         //location.reload();
       }
     );

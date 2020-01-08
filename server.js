@@ -5,7 +5,7 @@ var PORT = process.env.PORT || 8080;
 var app = express();
 
 // Serve static content for the app from the "public" directory in the application directory.
-app.use(express.static(path.join(__dirname,"public")));
+app.use(express.static("public"));
 
 // Parse application body as JSON
 app.use(express.urlencoded({ extended: true }));
@@ -14,12 +14,15 @@ app.use(express.json());
 // Set Handlebars.
 var exphbs = require("express-handlebars");
 
-app.engine( "handlebars", exphbs( { 
-  extname: 'handlebars', 
-  defaultLayout: 'main', 
-  layoutsDir: __dirname + '/views/layouts/',
-  partialsDir: __dirname + '/views/partials/'
-}));
+app.engine(
+  "handlebars",
+  exphbs({
+    extname: "handlebars",
+    defaultLayout: "main",
+    layoutsDir: __dirname + "/views/layouts/",
+    partialsDir: __dirname + "/views/partials/"
+  })
+);
 
 app.set("view engine", "handlebars");
 

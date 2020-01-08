@@ -1,3 +1,5 @@
+USE influencers_db;
+
 INSERT INTO brands (brand, ticker_symbol) VALUES ('Walmart', 'WMT');
 INSERT INTO brands (brand, ticker_symbol) VALUES ('Abercrombie', 'ANF');
 INSERT INTO brands (brand, ticker_symbol) VALUES ('Home Chef', 'KR');
@@ -35,14 +37,14 @@ INSERT INTO influencer_post (inf_name, ig_handle, brand, date_posted) VALUES ('K
 
 ###################################################################################################################################################################
 
-INSERT INTO influencer (inf_name, ig_handle) VALUES ('Jen Reed', 'thesisterstudioig');
-INSERT INTO influencer (inf_name, ig_handle) VALUES ('Amber Fillerup Clark', 'amberfillerup');
-INSERT INTO influencer (inf_name, ig_handle) VALUES ('Amy Jackson', 'fashion_jackson');
-INSERT INTO influencer (inf_name, ig_handle) VALUES ('Julia Marcum', 'chrislovesjulia');
-INSERT INTO influencer (inf_name, ig_handle) VALUES ('Sandi + Shalia', 'thespoiledhome');
-INSERT INTO influencer (inf_name, ig_handle) VALUES ('Brooke + Meggan', 'somewherelatley');
-INSERT INTO influencer (inf_name, ig_handle) VALUES ('Mary Orton', 'maryorton');
-INSERT INTO influencer (inf_name, ig_handle) VALUES ('Liz Adams', 'lizadams');
-INSERT INTO influencer (inf_name, ig_handle) VALUES ('Katie Staples', 'halfway_wholeistic');
-INSERT INTO influencer (inf_name, ig_handle) VALUES ('Lisa Allen', 'lisa_allen');
-INSERT INTO influencer (inf_name, ig_handle) VALUES ('Kelly Larkin', 'kellyinthecity');
+INSERT INTO influencers (inf_name, ig_handle) VALUES ('Jen Reed', 'thesisterstudioig');
+INSERT INTO influencers (inf_name, ig_handle) VALUES ('Amber Fillerup Clark', 'amberfillerup');
+INSERT INTO influencers (inf_name, ig_handle) VALUES ('Amy Jackson', 'fashion_jackson');
+INSERT INTO influencers (inf_name, ig_handle) VALUES ('Julia Marcum', 'chrislovesjulia');
+INSERT INTO influencers (inf_name, ig_handle) VALUES ('Sandi + Shalia', 'thespoiledhome');
+INSERT INTO influencers (inf_name, ig_handle) VALUES ('Brooke + Meggan', 'somewherelatley');
+INSERT INTO influencers (inf_name, ig_handle) VALUES ('Mary Orton', 'maryorton');
+INSERT INTO influencers (inf_name, ig_handle) VALUES ('Liz Adams', 'lizadams');
+INSERT INTO influencers (inf_name, ig_handle) VALUES ('Katie Staples', 'halfway_wholeistic');
+INSERT INTO influencers (inf_name, ig_handle) VALUES ('Lisa Allen', 'lisa_allen');
+INSERT INTO influencers (inf_name, ig_handle) VALUES ('Kelly Larkin', 'kellyinthecity');

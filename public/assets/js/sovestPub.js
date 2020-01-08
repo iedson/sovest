@@ -1,4 +1,7 @@
 $(document).ready(function() {
+
+  $("#cards").hide();
+
   var stockArray = [];
   iexcloudKey = "pk_cd9b9d66c0894584a1e3f9e96ca230a1";
 
@@ -19,7 +22,8 @@ $(document).ready(function() {
 
 //call influencers table SELECT *
   $("#inflBtn").on("click", function (event) {
-    console.log('hello')
+    $("#cards").show();
+    $("#inflBtn").hide();
   })
 
 

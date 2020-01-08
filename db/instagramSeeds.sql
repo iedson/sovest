@@ -1,3 +1,5 @@
+USE influencers_db;
+
 INSERT INTO brands (brand, ticker_symbol) VALUES ('Walmart', 'WMT');
 INSERT INTO brands (brand, ticker_symbol) VALUES ('Abercrombie', 'ANF');
 INSERT INTO brands (brand, ticker_symbol) VALUES ('Home Chef', 'KR');

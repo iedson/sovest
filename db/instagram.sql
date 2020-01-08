@@ -14,12 +14,12 @@ CREATE TABLE influencer_post
 	id int NOT NULL AUTO_INCREMENT,
 	inf_name varchar(300) NOT NULL,
 	ig_handle varchar(300) NOT NULL, 
-	brand, varchar(300) NOT NULL,
+	brand varchar(300) NOT NULL,
 	date_posted date NOT NULL,
 	PRIMARY KEY (id)
 );
 
-CREATE TABLE influencers
+CREATE TABLE influencer
 (
 	id int NOT NULL AUTO_INCREMENT,
 	inf_name varchar(300) NOT NULL,

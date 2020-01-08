@@ -36,72 +36,84 @@
         <div id="my_dataviz"></div>
     </div>
     <div class="row">
-        <button id="inflBtn">See All Influencers</button i>
+        <button id="inflBtn">See All Influencers</button>
+
+        <div id="cards">
+            {{> influencers/infl-block }}
+        </div>
+
     </div>
 
     <div class="row">
         <h2>Add a Partner to your Database</h2>
 
         <input class="" id="nameInput" name="name" type="text" placeholder="Enter Name..." />
+
         <input class="" id="handleInput" name="handle" type="text" placeholder="Enter Instagram Handle..." />
 
         <button id="addBtn">Add Partner</button>
 
+
     </div>
 </div>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+
+<canvas id="myChart" width="400" height="400"></canvas>
 <script>
+    $(document).ready(function () {
+        var closeStock = [];
+        var date = [];
+        let iexcloudKey = "pk_cd9b9d66c0894584a1e3f9e96ca230a1";
 
-    // set the dimensions and margins of the graph
-    var margin = { top: 10, right: 30, bottom: 30, left: 60 },
-        width = 460 - margin.left - margin.right,
-        height = 400 - margin.top - margin.bottom;
+        function initGraph() {
+            var queryUrl = `https://cloud.iexapis.com/stable/stock/twtr/chart?token=${iexcloudKey}`;
+            $.ajax({
+                url: queryUrl,
+                method: "GET"
+            }).then(function (response) {
+                for (var i = 0; i < response.length; i++) {
+                    //   console.log(response[i].close);
+                    closeStock.push(response[i].close);
+                    date.push(response[i].label);
+                }
 
-    // append the svg object to the body of the page
-    var svg = d3.select("#my_dataviz")
-        .append("svg")
-        .attr("width", width + margin.left + margin.right)
-        .attr("height", height + margin.top + margin.bottom)
-        .append("g")
-        .attr("transform",
-            "translate(" + margin.left + "," + margin.top + ")");
+                var ctx = document.getElementById('myChart').getContext('2d');
+                //console.log(data);
+                console.log(closeStock);
+                var myChart = new Chart(ctx, {
+                    type: 'line',
+                    data: {
+                        labels: date,
+                        datasets: [{
+                            label: 'Stock at Close',
+                            data: closeStock,
+                            backgroundColor: [
 
-    //Read the data
-    d3.csv("https://raw.githubusercontent.com/holtzy/data_to_viz/master/Example_dataset/3_TwoNumOrdered_comma.csv",
+                                'rgba(255, 159, 64, 0.2)'
+                            ],
+                            borderColor: [
+                                'rgba(255, 159, 64, 1)'
+                            ],
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        scales: {
+                            yAxes: [{
+                                ticks: {
+                                    beginAtZero: true
+                                    // instead of beginAtZero we can define ints for 'min' and 'max' values
+                                }
+                            }]
+                        }
+                    }
+                });
+            });
 
-        // When reading the csv, I must format variables:
-        function (d) {
-            return { date: d3.timeParse("%Y-%m-%d")(d.date), value: d.value }
-        },
+        }
 
-        // Now I can use this dataset:
-        function (data) {
 
-            // Add X axis --> it is a date format
-            var x = d3.scaleTime()
-                .domain(d3.extent(data, function (d) { return d.date; }))
-                .range([0, width]);
-            svg.append("g")
-                .attr("transform", "translate(0," + height + ")")
-                .call(d3.axisBottom(x));
+        initGraph();
 
-            // Add Y axis
-            var y = d3.scaleLinear()
-                .domain([0, d3.max(data, function (d) { return +d.value; })])
-                .range([height, 0]);
-            svg.append("g")
-                .call(d3.axisLeft(y));
-
-            // Add the line
-            svg.append("path")
-                .datum(data)
-                .attr("fill", "none")
-                .attr("stroke", "steelblue")
-                .attr("stroke-width", 1.5)
-                .attr("d", d3.line()
-                    .x(function (d) { return x(d.date) })
-                    .y(function (d) { return y(d.value) })
-                )
-
-        });
-
+    });
 </script>

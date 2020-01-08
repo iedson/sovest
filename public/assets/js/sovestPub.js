@@ -27,7 +27,7 @@ $(document).ready(function () {
 
     let newInfl = {
       name: $("#nameInput").val().trim(),
-      handle: $("#handleInput").val().trim()
+      ig_handle: $("#handleInput").val().trim(),
     };
 
     $.ajax("/api/influencers", {

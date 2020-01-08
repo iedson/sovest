@@ -33,7 +33,65 @@
         <h2>Sample graph</h2>
     </div>
     <div class="row">
-        <div id="my_dataviz"></div>
+        <div id="my_dataviz">
+            <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+                <canvas id="myChart" width="800" height="200"></canvas>
+            <script>
+                $(document).ready(function () {
+                    var closeStock = [];
+                    var date = [];
+                    let iexcloudKey = "pk_cd9b9d66c0894584a1e3f9e96ca230a1";
+
+                    function initGraph() {
+                        var queryUrl = `https://cloud.iexapis.com/stable/stock/tgt/chart?token=${iexcloudKey}`;
+                        //https://sandbox.iexapis.com/stable/stock/market/batch?symbols=wmt,anf,kr,expr,tgt,ebay,jwn,axp,qrtea,adt,gsp,lulu,urbnle&types=chart&range=1m&last=5&token=Tsk_1d5d4303e36d498f9c548f9f842691c5
+                        $.ajax({
+                            url: queryUrl,
+                            method: "GET"
+                        }).then(function (response) {
+                            for (var i = 0; i < response.length; i++) {
+                                //   console.log(response[i].close);
+                                closeStock.push(response[i].close);
+                                date.push(response[i].label);
+                            }
+
+                            var ctx = document.getElementById('myChart').getContext('2d');
+                            //console.log(data);
+                            console.log(closeStock);
+                            var myChart = new Chart(ctx, {
+                                type: 'line',
+                                data: {
+                                    labels: date,
+                                    datasets: [{
+                                        label: 'Target',
+                                        fill: false,
+                                        data: closeStock,
+                                        backgroundColor: ['rgba(255, 159, 64, 0.2)'],
+                                        borderColor: ['rgba(255, 159, 64, 1)'],
+                                        borderWidth: 1
+                                    }]
+                                },
+                                options: {
+                                    scales: {
+                                        yAxes: [{
+                                            ticks: {
+                                                beginAtZero: true
+                                                // instead of beginAtZero we can define ints for 'min' and 'max' values
+                                            }
+                                        }]
+                                    }
+                                }
+                            });
+                        });
+
+                    }
+
+
+        initGraph();
+
+                });
+            </script>
+        </div>
     </div>
     <div class="row">
         <button id="inflBtn">See All Influencers</button>
@@ -56,64 +114,3 @@
 
     </div>
 </div>
-<script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
-
-<canvas id="myChart" width="400" height="400"></canvas>
-<script>
-    $(document).ready(function () {
-        var closeStock = [];
-        var date = [];
-        let iexcloudKey = "pk_cd9b9d66c0894584a1e3f9e96ca230a1";
-
-        function initGraph() {
-            var queryUrl = `https://cloud.iexapis.com/stable/stock/twtr/chart?token=${iexcloudKey}`;
-            $.ajax({
-                url: queryUrl,
-                method: "GET"
-            }).then(function (response) {
-                for (var i = 0; i < response.length; i++) {
-                    //   console.log(response[i].close);
-                    closeStock.push(response[i].close);
-                    date.push(response[i].label);
-                }
-
-                var ctx = document.getElementById('myChart').getContext('2d');
-                //console.log(data);
-                console.log(closeStock);
-                var myChart = new Chart(ctx, {
-                    type: 'line',
-                    data: {
-                        labels: date,
-                        datasets: [{
-                            label: 'Stock at Close',
-                            data: closeStock,
-                            backgroundColor: [
-
-                                'rgba(255, 159, 64, 0.2)'
-                            ],
-                            borderColor: [
-                                'rgba(255, 159, 64, 1)'
-                            ],
-                            borderWidth: 1
-                        }]
-                    },
-                    options: {
-                        scales: {
-                            yAxes: [{
-                                ticks: {
-                                    beginAtZero: true
-                                    // instead of beginAtZero we can define ints for 'min' and 'max' values
-                                }
-                            }]
-                        }
-                    }
-                });
-            });
-
-        }
-
-
-        initGraph();
-
-    });
-</script>

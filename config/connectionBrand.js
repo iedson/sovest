@@ -6,11 +6,11 @@ if (process.env.JAWSDB_URL) {
   connectionBrand = mysql.createConnection(process.env.JAWSDB_URL)
 } else {
 
-  connectionBrand = mysql.createConnection( {
+  connectionBrand = mysql.createConnection({
     host: "localhost",
     port: 3306,
     user: "root",
-    password: "youllneverguessit",
+    password: "Addison5!",
     database: "brand_db"
   });
 }

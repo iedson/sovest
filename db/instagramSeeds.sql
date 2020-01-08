@@ -1,3 +1,25 @@
+INSERT INTO brands (name, ticker_symbol) VALUES ('Walmart', 'WMT');
+INSERT INTO brands (name, ticker_symbol) VALUES ('Abercrombie', 'ANF');
+INSERT INTO brands (name, ticker_symbol) VALUES ('Home Chef', 'KR');
+INSERT INTO brands (name, ticker_symbol) VALUES ('Express', 'EXPR');
+INSERT INTO brands (name, ticker_symbol) VALUES ('Target', 'TGT');
+INSERT INTO brands (name, ticker_symbol) VALUES ('eBay', 'EBAY');
+INSERT INTO brands (name, ticker_symbol) VALUES ('Nordstrom', 'JWN');
+INSERT INTO brands (name, ticker_symbol) VALUES ('American Express', 'AXP');
+INSERT INTO brands (name, ticker_symbol) VALUES ('Aerie', 'AEO');
+INSERT INTO brands (name, ticker_symbol) VALUES ('QVC', 'QRTEA');
+INSERT INTO brands (name, ticker_symbol) VALUES ('Blommingdales', 'M');
+INSERT INTO brands (name, ticker_symbol) VALUES ('Macys', 'M');
+INSERT INTO brands (name, ticker_symbol) VALUES ('Blue Mercury', 'M');
+INSERT INTO brands (name, ticker_symbol) VALUES ('ADT Security', 'ADT');
+INSERT INTO brands (name, ticker_symbol) VALUES ('Gap', 'GSP');
+INSERT INTO brands (name, ticker_symbol) VALUES ('Lululemon', 'LULU');
+INSERT INTO brands (name, ticker_symbol) VALUES ('Urban Outfitters', 'URBN');
+INSERT INTO brands (name, ticker_symbol) VALUES ('Vistaprint', 'CMPR');
+INSERT INTO brands (name, ticker_symbol) VALUES ('Free People', 'URBN');
+INSERT INTO brands (name, ticker_symbol) VALUES ("Land's End", 'LE');
+
+
 INSERT INTO influencers (name, ig_handle, followers, brand, date_posted) VALUES ('Jen Reed', 'thesisterstudioig', 706000, 'Express', '2019-11-30');
 INSERT INTO influencers (name, ig_handle, followers, brand, date_posted) VALUES ('Amber Fillerup Clark', 'amberfillerup', 14000000, "Land's End", '2019-12-06');
 INSERT INTO influencers (name, ig_handle, followers, brand, date_posted) VALUES ('Amy Jackson', 'fashion_jackson', 555000, 'eBay', '2019-12-01');

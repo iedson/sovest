@@ -55,11 +55,11 @@ $(document).ready(function() {
                 data: {
                     labels: date,
                     datasets: [{
-                        label: 'Target',
+                        label: getCode,
                         fill: false,
                         data: closeStock,
                         backgroundColor: ['rgba(255, 159, 64, 0.2)'],
-                        borderColor: ['rgba(255, 159, 64, 1)'],
+                        borderColor: ['rgba(191.0, 135.0, 154.0, 1.0)'],
                         borderWidth: 1
                     }]
                 },

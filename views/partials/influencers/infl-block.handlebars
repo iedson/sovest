@@ -1,7 +1,30 @@
-
+<!--
 <ul>
     {{#each influencers}}
         <li>{{ inf_name }}</li>
     {{/each}}
 </ul>
+
+<!---Image Card with Button On Bottom
+<div class="card" style="width: 18rem;">
+  <img src="..." class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Card title</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div>
+</div>
+
+<!---Image card with List & Button--> 
+{{#each influencers}}
+<div class="card" style="width: 18rem;">
+  <img src="/public/assets/images/chrislovesjulia.png" class="card-img-top" alt="Kelly In The City">
+  <ul class="list-group list-group-flush">
+    <li>{{ inf_name }}</li>
+  </ul>
+  <div class="card-body">
+    <div class="btn btn-primary">View Stock Influence</div>
+  </div>
+</div>
+{{/each}}
 

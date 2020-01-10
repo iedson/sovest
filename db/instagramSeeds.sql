@@ -174,3 +174,4 @@ INSERT INTO influencers
     (inf_name, ig_handle)
 VALUES
     ('Kelly Larkin', 'kellyinthecity');
+

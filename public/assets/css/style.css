@@ -1,5 +1,4 @@
-/*Foundation Hook*/
-@include foundation-everything;
+
 
 /* naviagation & header */
 header {
@@ -23,22 +22,18 @@ h1 {
     font-style: bold;
     color: #2b2d2f;
 }
-li {
-    padding: 5px;
-    margin: 5px;
-    background: #faebd7;
-  }
+
   
-  .label {
+.label {
     font-weight: bold;
   }
   
-  .create-update-form {
+.create-update-form {
     padding: 5px;
     margin: 5px;
     background: aqua;
-  }
+}
   
-  .form-group {
+.form-group {
     margin-bottom: 5px;
-  }
+}

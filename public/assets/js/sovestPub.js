@@ -4,6 +4,7 @@ $(document).ready(function() {
   var closeStock = [];
   var date = [];
 
+
   // Pull API key from .env
   $.ajax({
     url: "/api/iex",
@@ -16,7 +17,17 @@ $(document).ready(function() {
     $.ajax({
       url: queryUrl,
       method: "GET"
-    }).then(function(response) {
+  }).then(function (response) {
+
+    //console.log(closeStock);
+    //console.log(response);
+
+    var ANF = response.ANF
+    var JWN = response.JWN
+    var EBAY = response.EBAY
+
+
+
       for (var i = 0; i < response.length; i++) {
         //   console.log(response[i].close);
         closeStock.push(response[i].close);
@@ -25,7 +36,6 @@ $(document).ready(function() {
 
       var ctx = document.getElementById("myChart").getContext("2d");
       // console.log(data);
-      console.log(closeStock);
       var myChart = new Chart(ctx, {
         type: "line",
         data: {

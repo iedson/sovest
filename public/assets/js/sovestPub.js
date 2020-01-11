@@ -2,15 +2,23 @@ $(document).ready(function() {
 
   var closeStock = [];
   var date = [];
-  let iexcloudKeyInit = "Tpk_8f45b7f528d64598a271d2882d6c6265";
+  // let iexcloudKeyInit = "pk_4f55645593574bb4b7698d85650ffaff ";
 
   var queryUrl = 
-  `https://sandbox.iexapis.com/stable/stock/market/batch?symbols=anf,jwn,ebay&types=chart&range=1m&last=5&token=${iexcloudKeyInit}`;
-  
+  `https://sandbox.iexapis.com/stable/stock/market/batch?symbols=anf,jwn,ebay&types=chart&range=1m&last=5&token=Tpk_8f45b7f528d64598a271d2882d6c6265  `;
   $.ajax({
       url: queryUrl,
       method: "GET"
   }).then(function (response) {
+
+    //console.log(closeStock);
+    //console.log(response);
+
+    var ANF = response.ANF
+    var JWN = response.JWN
+    var EBAY = response.EBAY
+
+
       for (var i = 0; i < response.length; i++) {
           //   console.log(response[i].close);
           closeStock.push(response[i].close);
@@ -19,7 +27,6 @@ $(document).ready(function() {
 
       var ctx = document.getElementById('myChart').getContext('2d');
       // console.log(data);
-      console.log(closeStock);
       var myChart = new Chart(ctx, {
           type: 'line',
           data: {

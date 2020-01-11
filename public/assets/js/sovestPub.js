@@ -1,6 +1,9 @@
 $(document).ready(function() {
 
-  var closeStock = [];
+  let closeAnfStock = [];
+  let closeJwnStock = [];
+  let closeEbayStock = [];
+
   var date = [];
   // let iexcloudKeyInit = "pk_4f55645593574bb4b7698d85650ffaff ";
 
@@ -11,19 +14,23 @@ $(document).ready(function() {
       method: "GET"
   }).then(function (response) {
 
-    //console.log(closeStock);
-    //console.log(response);
+    let ANF = response.ANF.chart;
+    let JWN = response.JWN.chart;
+    let EBAY = response.EBAY.chart;
 
-    var ANF = response.ANF
-    var JWN = response.JWN
-    var EBAY = response.EBAY
+            for (let i = 0; i < ANF.length; i++) {
+              closeAnfStock.push(ANF[i].close);
+              date.push(ANF[i].label);
 
+            };
 
-      for (var i = 0; i < response.length; i++) {
-          //   console.log(response[i].close);
-          closeStock.push(response[i].close);
-          date.push(response[i].label);
-      }
+            for (let i = 0; i < JWN.length; i++) {
+              closeJwnStock.push(JWN[i].close);
+            };
+            for (let i = 0; i < EBAY.length; i++) {
+              closeEbayStock.push(EBAY[i].close);
+            };
+
 
       var ctx = document.getElementById('myChart').getContext('2d');
       // console.log(data);
@@ -32,25 +39,25 @@ $(document).ready(function() {
           data: {
               labels: date,
               datasets: [{
-                  label: 'getCode',
+                  label: 'Abercrombie',
                   fill: false,
-                  data: closeStock,
+                  data: closeAnfStock,
                   backgroundColor: ['rgba(255, 159, 64, 0.2)'],
                   borderColor: ['rgba(191.0, 135.0, 154.0, 1.0)'],
                   borderWidth: 1
               },
               {
-                label: 'getCode',
+                label: 'Nordstrom',
                 fill: false,
-                data: closeStock,
+                data: closeJwnStock,
                 backgroundColor: ['rgba(255, 159, 64, 0.2)'],
                 borderColor: ['rgba(103.0, 130.0, 91.0, 1.0)'],
                 borderWidth: 1
             },
             {
-              label: 'getCode',
+              label: 'Ebay',
               fill: false,
-              data: closeStock,
+              data: closeEbayStock,
               backgroundColor: ['rgba(255, 159, 64, 0.2)'],
               borderColor: ['rgba(252,	212,	225, 1)'],
               borderWidth: 1

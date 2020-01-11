@@ -2,6 +2,9 @@ var express = require("express");
 
 var router = express.Router();
 
+// Require dotenv to call .env files for API keys
+require("dotenv").config();
+
 // Import the model (cat.js) to use its database functions.
 var sovestModel = require("../models/sovest.js");
 
@@ -17,16 +20,21 @@ router.get("/", function(req, res) {
 });
 
 router.post("/api/influencers", function(req, res) {
-  sovestModel.create([
-    "inf_name", "ig_handle"
-  ], [
-    req.body.inf_name, req.body.ig_handle
-  ], function(result) {
-    // Send back the ID of the new quote
-    res.json({ id: result.insertId });
-  });
+  sovestModel.create(
+    ["inf_name", "ig_handle"],
+    [req.body.inf_name, req.body.ig_handle],
+    function(result) {
+      // Send back the ID of the new quote
+      res.json({ id: result.insertId });
+    }
+  );
 });
 
+router.get("/api/iex", function(req, res) {
+  apiKey = process.env.API_KEY;
+  apiKeySandbox = process.env.SANDBOX_API_KEY;
+  res.json({ apiKey, apiKeySandbox });
+});
 
 // Export routes for server.js to use.
 module.exports = router;

@@ -2,7 +2,6 @@
 
 /* naviagation & header */
 header {
-    background: #BF879A;
     font-family: 'Darker Grotesque', sans-serif;
     font-size: 20px;
     font-style: bold;
@@ -10,10 +9,11 @@ header {
 }
 
 body {
-   background: whitesmoke; 
+   background: whitesmoke;
+   display:flex;
+   flex-direction:column;
    font-family: 'Libre Franklin', sans-serif;
    font-size: 16px;
-   color: #2b2d2f;
 }
 
 h1 {
@@ -21,6 +21,12 @@ h1 {
     font-size: 18px;
     font-style: bold;
     color: #2b2d2f;
+}
+
+button {
+    background-color: #67825B;
+    color: #DDE3E6;
+    border-radius: 0.5rem;
 }
 
   

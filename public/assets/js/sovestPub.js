@@ -1,4 +1,8 @@
 $(document).ready(function() {
+
+  initGraph();
+  $("#init").hide();
+
   let closeAnfStock = [];
   let closeJwnStock = [];
   let closeEbayStock = [];
@@ -61,7 +65,7 @@ $(document).ready(function() {
               fill: false,
               data: closeEbayStock,
               backgroundColor: ["rgba(255, 159, 64, 0.2)"],
-              borderColor: ["rgba(252,	212,	225, 1)"],
+              borderColor: ["rgba(101, 116, 143,1)"],
               borderWidth: 1
             }
           ]
@@ -104,18 +108,25 @@ $(document).ready(function() {
       type: "POST",
       data: newInfl
     }).then(function() {
-      // empties the inputs before data is entered, fix!!!
-      // $('#nameInput').val('');
-      // $("#handleInput").val('');
-      // console.log("entered")
+      $('#nameInput').val('');
+      $("#handleInput").val('');
     });
   });
+ 
+$("#init").on("click", function(event) {
 
-  initGraph();
+  location.reload();  
+  });
+
 });
 
+
+
 function initGraph() {
+  
   $(".js-hook").on("click", function(event) {
+    $("#init").show();
+
     var getCode = $(this).attr("data-code");
     var closeStock = [];
     var date = [];

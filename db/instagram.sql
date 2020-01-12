@@ -1,5 +1,5 @@
-CREATE DATABASE instagram_db
-USE instagram_db
+CREATE DATABASE instagram_db;
+USE instagram_db;
 
 CREATE TABLE brands (
 	id int NOT NULL AUTO_INCREMENT,

@@ -49,7 +49,7 @@ $(document).ready(function () {
               fill: false,
               data: closeAnfStock,
               backgroundColor: ["rgba(255, 159, 64, 0.2)"],
-              borderColor: ["rgba(191.0, 135.0, 154.0, 1.0)"],
+              borderColor: ["rgba(69, 98, 91,1)"],
               borderWidth: 3
             },
             {
@@ -57,7 +57,7 @@ $(document).ready(function () {
               fill: false,
               data: closeJwnStock,
               backgroundColor: ["rgba(255, 159, 64, 0.2)"],
-              borderColor: ["rgba(103.0, 130.0, 91.0, 1.0)"],
+              borderColor: ["rgba( 50,118,101,1)"],
               borderWidth: 3
             },
             {
@@ -65,7 +65,7 @@ $(document).ready(function () {
               fill: false,
               data: closeEbayStock,
               backgroundColor: ["rgba(255, 159, 64, 0.2)"],
-              borderColor: ["rgba(101, 116, 143,1)"],
+              borderColor: ["rgba(133,144,101,1)"],
               borderWidth: 3
             }
           ]

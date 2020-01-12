@@ -23,74 +23,74 @@ INSERT INTO brands (brand, ticker_symbol) VALUES ("Land's End", 'LE');
 
 ###################################################################################################################################################################
 
-INSERT INTO influencer_post (inf_name, ig_handle, brand, date_posted) VALUES ('Jen Reed', 'thesisterstudioig', 'Express', DATE_FORMAT('2019-11-30'));
-INSERT INTO influencer_post (inf_name, ig_handle, brand, date_posted) VALUES ('Amber Fillerup Clark', 'amberfillerup', "Land's End", DATE_FORMAT('2019-12-06'));
-INSERT INTO influencer_post (inf_name, ig_handle, brand, date_posted) VALUES ('Amy Jackson', 'fashion_jackson', 'eBay', DATE_FORMAT('2019-12-01'));
-INSERT INTO influencer_post (inf_name, ig_handle, brand, date_posted) VALUES ('Julia Marcum', 'chrislovesjulia', 'eBay', DATE_FORMAT('2019-11-30'));
-INSERT INTO influencer_post (inf_name, ig_handle, brand, date_posted) VALUES ('Sandi + Shalia', 'thespoiledhome', 'Target', DATE_FORMAT('2019-11-30'));
-INSERT INTO influencer_post (inf_name, ig_handle, brand, date_posted) VALUES ('Brooke + Meggan', 'somewherelatley', 'Express', DATE_FORMAT('2019-11-29'));
-INSERT INTO influencer_post (inf_name, ig_handle, brand, date_posted) VALUES ('Mary Orton', 'maryorton', 'Nordstrom', DATE_FORMAT('2019-11-25'));
-INSERT INTO influencer_post (inf_name, ig_handle, brand, date_posted) VALUES ('Liz Adams', 'lizadams', 'Nordstrom', DATE_FORMAT('2019-11-25'));
-INSERT INTO influencer_post (inf_name, ig_handle, brand, date_posted) VALUES ('Katie Staples', 'halfway_wholeistic', DATE_FORMAT('Walmart', '2019-11-26'));
-INSERT INTO influencer_post (inf_name, ig_handle, brand, date_posted) VALUES ('Lisa Allen', 'lisa_allen', 'Nordstrom', DATE_FORMAT('2019-11-26'));
-INSERT INTO influencer_post (inf_name, ig_handle, brand, date_posted) VALUES ('Kelly Larkin', 'kellyinthecity', 'eBay', DATE_FORMAT('2019-11-30'));
+INSERT INTO influencer_post (inf_name, ig_handle, brand, date) VALUES ('Jen Reed', 'thesisterstudioig', 'Express', DATE('2019-11-30'));
+INSERT INTO influencer_post (inf_name, ig_handle, brand, date) VALUES ('Amber Fillerup Clark', 'amberfillerup', "Land's End", DATE('2019-12-06'));
+INSERT INTO influencer_post (inf_name, ig_handle, brand, date) VALUES ('Amy Jackson', 'fashion_jackson', 'eBay', DATE('2019-12-01'));
+INSERT INTO influencer_post (inf_name, ig_handle, brand, date) VALUES ('Julia Marcum', 'chrislovesjulia', 'eBay', DATE('2019-11-30'));
+INSERT INTO influencer_post (inf_name, ig_handle, brand, date) VALUES ('Sandi + Shalia', 'thespoiledhome', 'Target', DATE('2019-11-30'));
+INSERT INTO influencer_post (inf_name, ig_handle, brand, date) VALUES ('Brooke + Meggan', 'somewherelatley', 'Express', DATE('2019-11-29'));
+INSERT INTO influencer_post (inf_name, ig_handle, brand, date) VALUES ('Mary Orton', 'maryorton', 'Nordstrom', DATE('2019-11-25'));
+INSERT INTO influencer_post (inf_name, ig_handle, brand, date) VALUES ('Liz Adams', 'lizadams', 'Nordstrom', DATE('2019-11-25'));
+INSERT INTO influencer_post (inf_name, ig_handle, brand, date) VALUES ('Katie Staples', 'halfway_wholeistic', DATE('Walmart', '2019-11-26'));
+INSERT INTO influencer_post (inf_name, ig_handle, brand, date) VALUES ('Lisa Allen', 'lisa_allen', 'Nordstrom', DATE('2019-11-26'));
+INSERT INTO influencer_post (inf_name, ig_handle, brand, date) VALUES ('Kelly Larkin', 'kellyinthecity', 'eBay', DATE('2019-11-30'));
 
 -- FAKE SEEDS - eBay
 ###################################################################################################################################################################
-INSERT INTO influencer_post (inf_name, ig_handle, brand, date_posted) VALUES ('Kelly Larkin', 'kellyinthecity', 'eBay', DATE_FORMAT('2019-11-30'));
-INSERT INTO influencer_post (inf_name, ig_handle, brand, date_posted) VALUES ('Kelly Larkin', 'kellyinthecity', 'eBay', DATE_FORMAT('2019-12-02'));
-INSERT INTO influencer_post (inf_name, ig_handle, brand, date_posted) VALUES ('Kelly Larkin', 'kellyinthecity', 'eBay', DATE_FORMAT('2019-12-05'));
-INSERT INTO influencer_post (inf_name, ig_handle, brand, date_posted) VALUES ('Kelly Larkin', 'kellyinthecity', 'eBay', DATE_FORMAT('2019-12-07'));
-INSERT INTO influencer_post (inf_name, ig_handle, brand, date_posted) VALUES ('Kelly Larkin', 'kellyinthecity', 'eBay', DATE_FORMAT('2019-12-13'));
-INSERT INTO influencer_post (inf_name, ig_handle, brand, date_posted) VALUES ('Kelly Larkin', 'kellyinthecity', 'eBay', DATE_FORMAT('2019-12-20'));
-INSERT INTO influencer_post (inf_name, ig_handle, brand, date_posted) VALUES ('Kelly Larkin', 'kellyinthecity', 'eBay', DATE_FORMAT('2019-12-25'));
-INSERT INTO influencer_post (inf_name, ig_handle, brand, date_posted) VALUES ('Kelly Larkin', 'kellyinthecity', 'eBay', DATE_FORMAT('2020-01-01'));
-INSERT INTO influencer_post (inf_name, ig_handle, brand, date_posted) VALUES ('Kelly Larkin', 'kellyinthecity', 'eBay', DATE_FORMAT('2020-01-04'));
-INSERT INTO influencer_post (inf_name, ig_handle, brand, date_posted) VALUES ('Kelly Larkin', 'kellyinthecity', 'eBay', DATE_FORMAT('2020-01-08'));
+INSERT INTO influencer_post (inf_name, ig_handle, brand, date) VALUES ('Kelly Larkin', 'kellyinthecity', 'eBay', DATE('2019-11-30'));
+INSERT INTO influencer_post (inf_name, ig_handle, brand, date) VALUES ('Kelly Larkin', 'kellyinthecity', 'eBay', DATE('2019-12-02'));
+INSERT INTO influencer_post (inf_name, ig_handle, brand, date) VALUES ('Kelly Larkin', 'kellyinthecity', 'eBay', DATE('2019-12-05'));
+INSERT INTO influencer_post (inf_name, ig_handle, brand, date) VALUES ('Kelly Larkin', 'kellyinthecity', 'eBay', DATE('2019-12-07'));
+INSERT INTO influencer_post (inf_name, ig_handle, brand, date) VALUES ('Kelly Larkin', 'kellyinthecity', 'eBay', DATE('2019-12-13'));
+INSERT INTO influencer_post (inf_name, ig_handle, brand, date) VALUES ('Kelly Larkin', 'kellyinthecity', 'eBay', DATE('2019-12-20'));
+INSERT INTO influencer_post (inf_name, ig_handle, brand, date) VALUES ('Kelly Larkin', 'kellyinthecity', 'eBay', DATE('2019-12-25'));
+INSERT INTO influencer_post (inf_name, ig_handle, brand, date) VALUES ('Kelly Larkin', 'kellyinthecity', 'eBay', DATE('2020-01-01'));
+INSERT INTO influencer_post (inf_name, ig_handle, brand, date) VALUES ('Kelly Larkin', 'kellyinthecity', 'eBay', DATE('2020-01-04'));
+INSERT INTO influencer_post (inf_name, ig_handle, brand, date) VALUES ('Kelly Larkin', 'kellyinthecity', 'eBay', DATE('2020-01-08'));
 
 -- FAKE SEEDS - Abercrombie
 ###################################################################################################################################################################
 
-INSERT INTO influencer_post (inf_name, ig_handle, brand, date_posted) VALUES ('Amy Jackson', 'fashion_jackson', 'Abercrombie', DATE_FORMAT('2019-10-08'));
-INSERT INTO influencer_post (inf_name, ig_handle, brand, date_posted) VALUES ('Amy Jackson', 'fashion_jackson', 'Abercrombie', DATE_FORMAT('2019-10-20'));
-INSERT INTO influencer_post (inf_name, ig_handle, brand, date_posted) VALUES ('Amy Jackson', 'fashion_jackson', 'Abercrombie', DATE_FORMAT('2019-10-29'));
-INSERT INTO influencer_post (inf_name, ig_handle, brand, date_posted) VALUES ('Amy Jackson', 'fashion_jackson', 'Abercrombie', DATE_FORMAT('2019-11-03'));
-INSERT INTO influencer_post (inf_name, ig_handle, brand, date_posted) VALUES ('Amy Jackson', 'fashion_jackson', 'Abercrombie', DATE_FORMAT('2019-11-13'));
-INSERT INTO influencer_post (inf_name, ig_handle, brand, date_posted) VALUES ('Amy Jackson', 'fashion_jackson', 'Abercrombie', DATE_FORMAT('2019-11-20'));
-INSERT INTO influencer_post (inf_name, ig_handle, brand, date_posted) VALUES ('Amy Jackson', 'fashion_jackson', 'Abercrombie', DATE_FORMAT('2019-11-22'));
-INSERT INTO influencer_post (inf_name, ig_handle, brand, date_posted) VALUES ('Amy Jackson', 'fashion_jackson', 'Abercrombie', DATE_FORMAT('2019-12-01'));
-INSERT INTO influencer_post (inf_name, ig_handle, brand, date_posted) VALUES ('Amy Jackson', 'fashion_jackson', 'Abercrombie', DATE_FORMAT('2019-12-12'));
-INSERT INTO influencer_post (inf_name, ig_handle, brand, date_posted) VALUES ('Amy Jackson', 'fashion_jackson', 'Abercrombie', DATE_FORMAT('2019-12-25'));
-INSERT INTO influencer_post (inf_name, ig_handle, brand, date_posted) VALUES ('Amy Jackson', 'fashion_jackson', 'Abercrombie', DATE_FORMAT('2019-12-30'));
-INSERT INTO influencer_post (inf_name, ig_handle, brand, date_posted) VALUES ('Amy Jackson', 'fashion_jackson', 'Abercrombie', DATE_FORMAT('2020-01-08'));
+INSERT INTO influencer_post (inf_name, ig_handle, brand, date) VALUES ('Amy Jackson', 'fashion_jackson', 'Abercrombie', DATE('2019-10-08'));
+INSERT INTO influencer_post (inf_name, ig_handle, brand, date) VALUES ('Amy Jackson', 'fashion_jackson', 'Abercrombie', DATE('2019-10-20'));
+INSERT INTO influencer_post (inf_name, ig_handle, brand, date) VALUES ('Amy Jackson', 'fashion_jackson', 'Abercrombie', DATE('2019-10-29'));
+INSERT INTO influencer_post (inf_name, ig_handle, brand, date) VALUES ('Amy Jackson', 'fashion_jackson', 'Abercrombie', DATE('2019-11-03'));
+INSERT INTO influencer_post (inf_name, ig_handle, brand, date) VALUES ('Amy Jackson', 'fashion_jackson', 'Abercrombie', DATE('2019-11-13'));
+INSERT INTO influencer_post (inf_name, ig_handle, brand, date) VALUES ('Amy Jackson', 'fashion_jackson', 'Abercrombie', DATE('2019-11-20'));
+INSERT INTO influencer_post (inf_name, ig_handle, brand, date) VALUES ('Amy Jackson', 'fashion_jackson', 'Abercrombie', DATE('2019-11-22'));
+INSERT INTO influencer_post (inf_name, ig_handle, brand, date) VALUES ('Amy Jackson', 'fashion_jackson', 'Abercrombie', DATE('2019-12-01'));
+INSERT INTO influencer_post (inf_name, ig_handle, brand, date) VALUES ('Amy Jackson', 'fashion_jackson', 'Abercrombie', DATE('2019-12-12'));
+INSERT INTO influencer_post (inf_name, ig_handle, brand, date) VALUES ('Amy Jackson', 'fashion_jackson', 'Abercrombie', DATE('2019-12-25'));
+INSERT INTO influencer_post (inf_name, ig_handle, brand, date) VALUES ('Amy Jackson', 'fashion_jackson', 'Abercrombie', DATE('2019-12-30'));
+INSERT INTO influencer_post (inf_name, ig_handle, brand, date) VALUES ('Amy Jackson', 'fashion_jackson', 'Abercrombie', DATE('2020-01-08'));
 
 -- FAKE SEEDS - Nordstrom
 ###################################################################################################################################################################
 
-INSERT INTO influencer_post (inf_name, ig_handle, brand, date_posted) VALUES ('Mary Orton', 'maryorton', 'Nordstrom', DATE_FORMAT('2019-10-02'));
-INSERT INTO influencer_post (inf_name, ig_handle, brand, date_posted) VALUES ('Mary Orton', 'maryorton', 'Nordstrom', DATE_FORMAT('2019-10-05'));
-INSERT INTO influencer_post (inf_name, ig_handle, brand, date_posted) VALUES ('Mary Orton', 'maryorton', 'Nordstrom', DATE_FORMAT('2019-10-11'));
-INSERT INTO influencer_post (inf_name, ig_handle, brand, date_posted) VALUES ('Mary Orton', 'maryorton', 'Nordstrom', DATE_FORMAT('2019-10-21'));
-INSERT INTO influencer_post (inf_name, ig_handle, brand, date_posted) VALUES ('Mary Orton', 'maryorton', 'Nordstrom', DATE_FORMAT('2019-10-25'));
-INSERT INTO influencer_post (inf_name, ig_handle, brand, date_posted) VALUES ('Mary Orton', 'maryorton', 'Nordstrom', DATE_FORMAT('2019-11-05'));
-INSERT INTO influencer_post (inf_name, ig_handle, brand, date_posted) VALUES ('Mary Orton', 'maryorton', 'Nordstrom', DATE_FORMAT('2019-11-15'));
-INSERT INTO influencer_post (inf_name, ig_handle, brand, date_posted) VALUES ('Mary Orton', 'maryorton', 'Nordstrom', DATE_FORMAT('2019-11-25'));
-INSERT INTO influencer_post (inf_name, ig_handle, brand, date_posted) VALUES ('Mary Orton', 'maryorton', 'Nordstrom', DATE_FORMAT('2019-11-29'));
-INSERT INTO influencer_post (inf_name, ig_handle, brand, date_posted) VALUES ('Mary Orton', 'maryorton', 'Nordstrom', DATE_FORMAT('2019-12-01'));
-INSERT INTO influencer_post (inf_name, ig_handle, brand, date_posted) VALUES ('Mary Orton', 'maryorton', 'Nordstrom', DATE_FORMAT('2019-12-02'));
-INSERT INTO influencer_post (inf_name, ig_handle, brand, date_posted) VALUES ('Mary Orton', 'maryorton', 'Nordstrom', DATE_FORMAT('2019-12-03'));
-INSERT INTO influencer_post (inf_name, ig_handle, brand, date_posted) VALUES ('Mary Orton', 'maryorton', 'Nordstrom', DATE_FORMAT('2019-12-12'));
-INSERT INTO influencer_post (inf_name, ig_handle, brand, date_posted) VALUES ('Mary Orton', 'maryorton', 'Nordstrom', DATE_FORMAT('2019-12-15'));
-INSERT INTO influencer_post (inf_name, ig_handle, brand, date_posted) VALUES ('Mary Orton', 'maryorton', 'Nordstrom', DATE_FORMAT('2019-12-20'));
-INSERT INTO influencer_post (inf_name, ig_handle, brand, date_posted) VALUES ('Mary Orton', 'maryorton', 'Nordstrom', DATE_FORMAT('2019-12-21'));
-INSERT INTO influencer_post (inf_name, ig_handle, brand, date_posted) VALUES ('Mary Orton', 'maryorton', 'Nordstrom', DATE_FORMAT('2019-12-22'));
-INSERT INTO influencer_post (inf_name, ig_handle, brand, date_posted) VALUES ('Mary Orton', 'maryorton', 'Nordstrom', DATE_FORMAT('2019-12-23'));
-INSERT INTO influencer_post (inf_name, ig_handle, brand, date_posted) VALUES ('Mary Orton', 'maryorton', 'Nordstrom', DATE_FORMAT('2019-12-24'));
-INSERT INTO influencer_post (inf_name, ig_handle, brand, date_posted) VALUES ('Mary Orton', 'maryorton', 'Nordstrom', DATE_FORMAT('2019-12-25'));
-INSERT INTO influencer_post (inf_name, ig_handle, brand, date_posted) VALUES ('Mary Orton', 'maryorton', 'Nordstrom', DATE_FORMAT('2019-01-01'));
-INSERT INTO influencer_post (inf_name, ig_handle, brand, date_posted) VALUES ('Mary Orton', 'maryorton', 'Nordstrom', DATE_FORMAT('2019-01-03'));
-INSERT INTO influencer_post (inf_name, ig_handle, brand, date_posted) VALUES ('Mary Orton', 'maryorton', 'Nordstrom', DATE_FORMAT('2019-01-04'));
-INSERT INTO influencer_post (inf_name, ig_handle, brand, date_posted) VALUES ('Mary Orton', 'maryorton', 'Nordstrom', DATE_FORMAT('2019-01-08'));
+INSERT INTO influencer_post (inf_name, ig_handle, brand, date) VALUES ('Mary Orton', 'maryorton', 'Nordstrom', DATE('2019-10-02'));
+INSERT INTO influencer_post (inf_name, ig_handle, brand, date) VALUES ('Mary Orton', 'maryorton', 'Nordstrom', DATE('2019-10-05'));
+INSERT INTO influencer_post (inf_name, ig_handle, brand, date) VALUES ('Mary Orton', 'maryorton', 'Nordstrom', DATE('2019-10-11'));
+INSERT INTO influencer_post (inf_name, ig_handle, brand, date) VALUES ('Mary Orton', 'maryorton', 'Nordstrom', DATE('2019-10-21'));
+INSERT INTO influencer_post (inf_name, ig_handle, brand, date) VALUES ('Mary Orton', 'maryorton', 'Nordstrom', DATE('2019-10-25'));
+INSERT INTO influencer_post (inf_name, ig_handle, brand, date) VALUES ('Mary Orton', 'maryorton', 'Nordstrom', DATE('2019-11-05'));
+INSERT INTO influencer_post (inf_name, ig_handle, brand, date) VALUES ('Mary Orton', 'maryorton', 'Nordstrom', DATE('2019-11-15'));
+INSERT INTO influencer_post (inf_name, ig_handle, brand, date) VALUES ('Mary Orton', 'maryorton', 'Nordstrom', DATE('2019-11-25'));
+INSERT INTO influencer_post (inf_name, ig_handle, brand, date) VALUES ('Mary Orton', 'maryorton', 'Nordstrom', DATE('2019-11-29'));
+INSERT INTO influencer_post (inf_name, ig_handle, brand, date) VALUES ('Mary Orton', 'maryorton', 'Nordstrom', DATE('2019-12-01'));
+INSERT INTO influencer_post (inf_name, ig_handle, brand, date) VALUES ('Mary Orton', 'maryorton', 'Nordstrom', DATE('2019-12-02'));
+INSERT INTO influencer_post (inf_name, ig_handle, brand, date) VALUES ('Mary Orton', 'maryorton', 'Nordstrom', DATE('2019-12-03'));
+INSERT INTO influencer_post (inf_name, ig_handle, brand, date) VALUES ('Mary Orton', 'maryorton', 'Nordstrom', DATE('2019-12-12'));
+INSERT INTO influencer_post (inf_name, ig_handle, brand, date) VALUES ('Mary Orton', 'maryorton', 'Nordstrom', DATE('2019-12-15'));
+INSERT INTO influencer_post (inf_name, ig_handle, brand, date) VALUES ('Mary Orton', 'maryorton', 'Nordstrom', DATE('2019-12-20'));
+INSERT INTO influencer_post (inf_name, ig_handle, brand, date) VALUES ('Mary Orton', 'maryorton', 'Nordstrom', DATE('2019-12-21'));
+INSERT INTO influencer_post (inf_name, ig_handle, brand, date) VALUES ('Mary Orton', 'maryorton', 'Nordstrom', DATE('2019-12-22'));
+INSERT INTO influencer_post (inf_name, ig_handle, brand, date) VALUES ('Mary Orton', 'maryorton', 'Nordstrom', DATE('2019-12-23'));
+INSERT INTO influencer_post (inf_name, ig_handle, brand, date) VALUES ('Mary Orton', 'maryorton', 'Nordstrom', DATE('2019-12-24'));
+INSERT INTO influencer_post (inf_name, ig_handle, brand, date) VALUES ('Mary Orton', 'maryorton', 'Nordstrom', DATE('2019-12-25'));
+INSERT INTO influencer_post (inf_name, ig_handle, brand, date) VALUES ('Mary Orton', 'maryorton', 'Nordstrom', DATE('2019-01-01'));
+INSERT INTO influencer_post (inf_name, ig_handle, brand, date) VALUES ('Mary Orton', 'maryorton', 'Nordstrom', DATE('2019-01-03'));
+INSERT INTO influencer_post (inf_name, ig_handle, brand, date) VALUES ('Mary Orton', 'maryorton', 'Nordstrom', DATE('2019-01-04'));
+INSERT INTO influencer_post (inf_name, ig_handle, brand, date) VALUES ('Mary Orton', 'maryorton', 'Nordstrom', DATE('2019-01-08'));
 
 ###################################################################################################################################################################
 

@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(document).ready(function () {
 
   initGraph();
   $("#init").hide();
@@ -12,7 +12,7 @@ $(document).ready(function() {
   $.ajax({
     url: "/api/iex",
     method: "GET"
-  }).then(function(response) {
+  }).then(function (response) {
     var iexcloudKeyInit = response.apiKeySandbox;
     console.log(iexcloudKeyInit);
 
@@ -20,7 +20,7 @@ $(document).ready(function() {
     $.ajax({
       url: queryUrl,
       method: "GET"
-    }).then(function(response) {
+    }).then(function (response) {
       let ANF = response.ANF.chart;
       let JWN = response.JWN.chart;
       let EBAY = response.EBAY.chart;
@@ -50,7 +50,7 @@ $(document).ready(function() {
               data: closeAnfStock,
               backgroundColor: ["rgba(255, 159, 64, 0.2)"],
               borderColor: ["rgba(191.0, 135.0, 154.0, 1.0)"],
-              borderWidth: 1
+              borderWidth: 3
             },
             {
               label: "Nordstrom",
@@ -58,7 +58,7 @@ $(document).ready(function() {
               data: closeJwnStock,
               backgroundColor: ["rgba(255, 159, 64, 0.2)"],
               borderColor: ["rgba(103.0, 130.0, 91.0, 1.0)"],
-              borderWidth: 1
+              borderWidth: 3
             },
             {
               label: "Ebay",
@@ -66,7 +66,7 @@ $(document).ready(function() {
               data: closeEbayStock,
               backgroundColor: ["rgba(255, 159, 64, 0.2)"],
               borderColor: ["rgba(101, 116, 143,1)"],
-              borderWidth: 1
+              borderWidth: 3
             }
           ]
         },
@@ -89,12 +89,12 @@ $(document).ready(function() {
   $("#cards").hide();
 
   //call influencers table SELECT *
-  $("#inflBtn").on("click", function(event) {
+  $("#inflBtn").on("click", function (event) {
     $("#cards").toggle();
   });
 
   //enter an influencer into the db
-  $("#addBtn").on("click", function(event) {
+  $("#addBtn").on("click", function (event) {
     let newInfl = {
       inf_name: $("#nameInput")
         .val()
@@ -107,15 +107,15 @@ $(document).ready(function() {
     $.ajax("/api/influencers", {
       type: "POST",
       data: newInfl
-    }).then(function() {
+    }).then(function () {
       $('#nameInput').val('');
       $("#handleInput").val('');
     });
   });
- 
-$("#init").on("click", function(event) {
 
-  location.reload();  
+  $("#init").on("click", function (event) {
+
+    location.reload();
   });
 
 });
@@ -123,8 +123,8 @@ $("#init").on("click", function(event) {
 
 
 function initGraph() {
-  
-  $(".js-hook").on("click", function(event) {
+
+  $(".js-hook").on("click", function (event) {
     $("#init").show();
 
     var getCode = $(this).attr("data-code");
@@ -135,7 +135,7 @@ function initGraph() {
     $.ajax({
       url: "/api/iex",
       method: "GET"
-    }).then(function(response) {
+    }).then(function (response) {
       iexcloudKey = response.apiKey;
 
       var queryUrl = `https://cloud.iexapis.com/stable/stock/${getCode}/chart?token=${iexcloudKey}`;
@@ -143,7 +143,7 @@ function initGraph() {
       $.ajax({
         url: queryUrl,
         method: "GET"
-      }).then(function(response) {
+      }).then(function (response) {
         for (var i = 0; i < response.length; i++) {
           //   console.log(response[i].close);
           closeStock.push(response[i].close);

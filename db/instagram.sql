@@ -1,5 +1,5 @@
-CREATE DATABASE instagram_db;
-USE instagram_db;
+CREATE DATABASE instagram_db
+USE instagram_db
 
 CREATE TABLE brands (
 	id int NOT NULL AUTO_INCREMENT,
@@ -21,6 +21,6 @@ CREATE TABLE influencers (
 	id int NOT NULL AUTO_INCREMENT,
 	inf_name varchar(300) NOT NULL,
 	ig_handle varchar(300) NOT NULL,
-	img LONGBLOB NOT NULL,
+	img LONGBLOB,
 	PRIMARY KEY(id)
 );

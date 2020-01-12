@@ -1,4 +1,8 @@
-$(document).ready(function() {
+$(document).ready(function () {
+
+  initGraph();
+  $("#init").hide();
+
   let closeAnfStock = [];
   let closeJwnStock = [];
   let closeEbayStock = [];
@@ -9,7 +13,7 @@ $(document).ready(function() {
   $.ajax({
     url: "/api/iex",
     method: "GET"
-  }).then(function(response) {
+  }).then(function (response) {
     var iexcloudKeyInit = response.apiKeySandbox;
     console.log(iexcloudKeyInit);
 
@@ -17,7 +21,7 @@ $(document).ready(function() {
     $.ajax({
       url: queryUrl,
       method: "GET"
-    }).then(function(response) {
+    }).then(function (response) {
       let ANF = response.ANF.chart;
       let JWN = response.JWN.chart;
       let EBAY = response.EBAY.chart;
@@ -34,6 +38,7 @@ $(document).ready(function() {
         closeEbayStock.push(EBAY[i].close);
       }
 
+
       $.ajax({
         url: "/api/influcencerposts/kellyinthecity",
         method: "GET"
@@ -41,13 +46,44 @@ $(document).ready(function() {
         console.log(dbResponse);
         console.log(dbResponse.igPostArray[0].inf_name);
 
-        var ctx = document.getElementById("myChart").getContext("2d");
-        // console.log(data);
-        var myChart = new Chart(ctx, {
-          type: "line",
-          data: {
-            labels: date,
-            datasets: [
+       
+      var ctx = document.getElementById("myChart").getContext("2d");
+      // console.log(data);
+      var myChart = new Chart(ctx, {
+        type: "line",
+        data: {
+          labels: date,
+          datasets: [
+            {
+              label: "Abercrombie",
+              fill: false,
+              data: closeAnfStock,
+              backgroundColor: ["rgba(255, 159, 64, 0.2)"],
+              borderColor: ["rgba(69, 98, 91,1)"],
+              borderWidth: 3
+            },
+            {
+              label: "Nordstrom",
+              fill: false,
+              data: closeJwnStock,
+              backgroundColor: ["rgba(255, 159, 64, 0.2)"],
+              borderColor: ["rgba( 50,118,101,1)"],
+              borderWidth: 3
+            },
+            {
+              label: "Ebay",
+              fill: false,
+              data: closeEbayStock,
+              backgroundColor: ["rgba(255, 159, 64, 0.2)"],
+              borderColor: ["rgba(133,144,101,1)"],
+              borderWidth: 3
+            }
+          ]
+        },
+        options: {
+          scales: {
+            yAxes: [
+
               {
                 label: "Abercrombie",
                 fill: false,
@@ -102,12 +138,12 @@ $(document).ready(function() {
   $("#cards").hide();
 
   //call influencers table SELECT *
-  $("#inflBtn").on("click", function(event) {
+  $("#inflBtn").on("click", function (event) {
     $("#cards").toggle();
   });
 
   //enter an influencer into the db
-  $("#addBtn").on("click", function(event) {
+  $("#addBtn").on("click", function (event) {
     let newInfl = {
       inf_name: $("#nameInput")
         .val()
@@ -120,19 +156,26 @@ $(document).ready(function() {
     $.ajax("/api/influencers", {
       type: "POST",
       data: newInfl
-    }).then(function() {
-      // empties the inputs before data is entered, fix!!!
-      // $('#nameInput').val('');
-      // $("#handleInput").val('');
-      // console.log("entered")
+    }).then(function () {
+      $('#nameInput').val('');
+      $("#handleInput").val('');
     });
   });
 
-  initGraph();
+  $("#init").on("click", function (event) {
+
+    location.reload();
+  });
+
 });
 
+
+
 function initGraph() {
-  $(".js-hook").on("click", function(event) {
+
+  $(".js-hook").on("click", function (event) {
+    $("#init").show();
+
     var getCode = $(this).attr("data-code");
     var closeStock = [];
     var date = [];
@@ -141,7 +184,7 @@ function initGraph() {
     $.ajax({
       url: "/api/iex",
       method: "GET"
-    }).then(function(response) {
+    }).then(function (response) {
       iexcloudKey = response.apiKey;
 
       var queryUrl = `https://cloud.iexapis.com/stable/stock/${getCode}/chart?token=${iexcloudKey}`;
@@ -149,7 +192,7 @@ function initGraph() {
       $.ajax({
         url: queryUrl,
         method: "GET"
-      }).then(function(response) {
+      }).then(function (response) {
         for (var i = 0; i < response.length; i++) {
           //   console.log(response[i].close);
           closeStock.push(response[i].close);

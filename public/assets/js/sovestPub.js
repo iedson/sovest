@@ -7,6 +7,7 @@ $(document).ready(function () {
   let closeJwnStock = [];
   let closeEbayStock = [];
   var date = [];
+  let igPostHistory = [];
 
   // Pull API key from .env
   $.ajax({
@@ -37,6 +38,15 @@ $(document).ready(function () {
         closeEbayStock.push(EBAY[i].close);
       }
 
+
+      $.ajax({
+        url: "/api/influcencerposts/kellyinthecity",
+        method: "GET"
+      }).then(function(dbResponse) {
+        console.log(dbResponse);
+        console.log(dbResponse.igPostArray[0].inf_name);
+
+       
       var ctx = document.getElementById("myChart").getContext("2d");
       // console.log(data);
       var myChart = new Chart(ctx, {
@@ -73,15 +83,54 @@ $(document).ready(function () {
         options: {
           scales: {
             yAxes: [
+
               {
-                ticks: {
-                  beginAtZero: true
-                  // instead of beginAtZero we can define ints for 'min' and 'max' values
-                }
+                label: "Abercrombie",
+                fill: false,
+                data: closeAnfStock,
+                backgroundColor: ["rgba(255, 159, 64, 0.2)"],
+                borderColor: ["rgba(191.0, 135.0, 154.0, 1.0)"],
+                borderWidth: 1
+              },
+              {
+                label: "Nordstrom",
+                fill: false,
+                data: closeJwnStock,
+                backgroundColor: ["rgba(255, 159, 64, 0.2)"],
+                borderColor: ["rgba(103.0, 130.0, 91.0, 1.0)"],
+                borderWidth: 1
+              },
+              {
+                label: "Ebay",
+                fill: false,
+                data: closeEbayStock,
+                backgroundColor: ["rgba(255, 159, 64, 0.2)"],
+                borderColor: ["rgba(252,	212,	225, 1)"],
+                borderWidth: 1
+              },
+              {
+                label: "Ebay",
+                fill: false,
+                data: closeEbayStock,
+                backgroundColor: ["rgba(255, 159, 64, 0.2)"],
+                borderColor: ["rgba(252,	212,	225, 1)"],
+                borderWidth: 1
               }
             ]
+          },
+          options: {
+            scales: {
+              yAxes: [
+                {
+                  ticks: {
+                    beginAtZero: true
+                    // instead of beginAtZero we can define ints for 'min' and 'max' values
+                  }
+                }
+              ]
+            }
           }
-        }
+        });
       });
     });
   });

@@ -19,6 +19,15 @@ router.get("/", function(req, res) {
   });
 });
 
+router.get("/api/influcencerposts/:id", function(req, res) {
+  var igId = req.params.id;
+  console.log("igHandle", igId);
+
+  sovestModel.inflPosts(igId, function(igPostArray) {
+    res.json({ igPostArray });
+  });
+});
+
 router.post("/api/influencers", function(req, res) {
   sovestModel.create(
     ["inf_name", "ig_handle"],

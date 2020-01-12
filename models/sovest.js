@@ -7,12 +7,16 @@ var sovest = {
       cb(res);
     });
   },
+  inflPosts: function(ig_handle, cb) {
+    orm.inflPosts("influencer_post", ig_handle, function(res) {
+      cb(res);
+    });
+  },
   create: function(cols, vals, cb) {
     orm.create("influencers", cols, vals, function(res) {
       cb(res);
     });
-  },
-  
+  }
 };
 
 // Export the database functions for the controller (sovestsController.js).

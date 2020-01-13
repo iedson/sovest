@@ -13,7 +13,7 @@ CREATE TABLE influencer_post (
 	inf_name varchar(300) NOT NULL,
 	ig_handle varchar(300) NOT NULL, 
 	brand varchar(300) NOT NULL,
-	date_posted date NOT NULL,
+	date date NOT NULL,
 	PRIMARY KEY(id)
 );
 

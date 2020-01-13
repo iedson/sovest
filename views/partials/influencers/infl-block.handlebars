@@ -15,18 +15,16 @@
   </div>
 </div>
 
-<!---Image card with List & Button--> 
+<!---Image card with List & Button-->
 {{#each influencers}}
 <div class="card row" style="width: 18rem;">
-  
+
   <img src={{img}} alt="">
   <div>{{ inf_name }}</div>
- 
+
   <div class="card-body">
-    <button>View Stock Influence</button>
+    <button id={{ ig_handle }} class="stockInfl">View Stock Influence</button>
   </div>
-  
+
 </div>
 {{/each}}
-
-

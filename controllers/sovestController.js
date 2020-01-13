@@ -19,6 +19,15 @@ router.get("/", function(req, res) {
   });
 });
 
+router.get("/api/brand/:id", function(req, res) {
+  var brand = req.params.id;
+  console.log("brand", brand);
+
+  sovestModel.tickerResponse(brand, function(ticker) {
+    res.json(ticker);
+  });
+});
+
 router.get("/api/influcencerposts/:id", function(req, res) {
   var igId = req.params.id;
   console.log("igHandle", igId);

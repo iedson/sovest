@@ -12,6 +12,11 @@ var sovest = {
       cb(res);
     });
   },
+  tickerResponse: function(brand, cb) {
+    orm.tickerResponse("brands", brand, function(res) {
+      cb(res);
+    });
+  },
   create: function(cols, vals, cb) {
     orm.create("influencers", cols, vals, function(res) {
       cb(res);

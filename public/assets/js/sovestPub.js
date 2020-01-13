@@ -42,7 +42,7 @@ $(document).ready(function () {
         method: "GET"
       }).then(function (dbResponse) {
         console.log(dbResponse);
-        console.log(dbResponse.igPostArray[0].inf_name);
+        //console.log(dbResponse.igPostArray[0].inf_name);
       })
 
       var ctx = document.getElementById("myChart").getContext("2d");
@@ -136,8 +136,10 @@ function initGraph() {
     $("#init").show();
 
     var getCode = $(this).attr("data-code");
+    console.log(getCode)
     var closeStock = [];
     var date = [];
+    var getColor = '';
 
     // Pull API key from .env
     $.ajax({
@@ -158,6 +160,20 @@ function initGraph() {
           date.push(response[i].label);
         }
 
+        if (getCode === "ANF"){
+          getColor = ["rgba(103,130, 91,1)"]
+          console.log(getColor)
+        }
+        if (getCode === "JWN"){
+          getColor = ["rgba(133,144,101,1)"]
+          console.log(getColor)
+
+        }
+        if (getCode === "EBAY"){
+          getColor = ["rgba( 50,118,101,1)"]
+          console.log(getColor)
+        }
+
         var ctx = document.getElementById("myChart").getContext("2d");
         //console.log(data);
         console.log(closeStock);
@@ -171,7 +187,7 @@ function initGraph() {
                 fill: false,
                 data: closeStock,
                 backgroundColor: ["rgba(255, 159, 64, 0.2)"],
-                borderColor: ["rgba(191.0, 135.0, 154.0, 1.0)"],
+                borderColor: getColor,
                 borderWidth: 1
               }
             ]

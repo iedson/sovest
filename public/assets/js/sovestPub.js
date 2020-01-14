@@ -9,6 +9,7 @@ $(document).ready(function() {
   let closeTgtStock = [];
   let closeWmtStock = [];
   var date = [];
+  let datePoint = [];
 
   // Pull API key from .env
   $.ajax({
@@ -28,6 +29,7 @@ $(document).ready(function() {
       let EXPR = response.EXPR.chart;
       let TGT = response.TGT.chart;
       let WMT = response.WMT.chart;
+      
 
       for (let i = 0; i < ANF.length; i++) {
         closeAnfStock.push(ANF[i].close);
@@ -50,15 +52,19 @@ $(document).ready(function() {
         closeWmtStock.push(WMT[i].close);
       }
 
-
-
       $.ajax({
         url: "/api/influcencerposts/kellyinthecity",
         method: "GET"
       }).then(function (dbResponse) {
-        console.log(dbResponse);
-        //console.log(dbResponse.igPostArray[0].inf_name);
-      })
+        let igDate = dbResponse.igPostArray[0].date_posted;
+        let splitDate = igDate.split("T")[0];
+       // console.log(splitDate);
+        if (splitDate = date) {
+          console.log("Dates match!")
+         // datePoint.push(splitDate);
+         // console.log(datePoint);
+        }
+      });
 
 
       var ctx = document.getElementById("myChart").getContext("2d");

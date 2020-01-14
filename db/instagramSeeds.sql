@@ -19,7 +19,7 @@ INSERT INTO brands (brand, ticker_symbol) VALUES ('Lululemon', 'LULU');
 INSERT INTO brands (brand, ticker_symbol) VALUES ('Urban Outfitters', 'URBN');
 INSERT INTO brands (brand, ticker_symbol) VALUES ('Vistaprint', 'CMPR');
 INSERT INTO brands (brand, ticker_symbol) VALUES ('Free People', 'URBN');
-INSERT INTO brands (brand, ticker_symbol) VALUES ("Land's End", 'LE');
+INSERT INTO brands (brand, ticker_symbol) VALUES ("Lands End", 'LE');
 
 ###################################################################################################################################################################
 
@@ -94,14 +94,14 @@ INSERT INTO influencer_post (inf_name, ig_handle, brand, date) VALUES ('Mary Ort
 
 ###################################################################################################################################################################
 
-INSERT INTO influencers (inf_name, ig_handle, img) VALUES ('Jen Reed', 'thesisterstudioig', LOAD_FILE('/images/thesisterstudioig.png'));
-INSERT INTO influencers (inf_name, ig_handle, img) VALUES ('Amber Fillerup Clark', 'amberfillerup', LOAD_FILE('/images/amberfillerup.png'));
-INSERT INTO influencers (inf_name, ig_handle, img) VALUES ('Amy Jackson', 'fashion_jackson', LOAD_FILE('/images/fashion_jackson.png'));
-INSERT INTO influencers (inf_name, ig_handle, img) VALUES ('Julia Marcum', 'chrislovesjulia', LOAD_FILE('/images/chrislovesjulia.png'));
-INSERT INTO influencers (inf_name, ig_handle, img) VALUES ('Sandi + Shalia', 'thespoiledhome', LOAD_FILE('/images/thespoiledhome.png'));
-INSERT INTO influencers (inf_name, ig_handle, img) VALUES ('Brooke + Meggan', 'somewherelatley', LOAD_FILE('/images/somewherelately.png'));
-INSERT INTO influencers (inf_name, ig_handle, img) VALUES ('Mary Orton', 'maryorton', LOAD_FILE('/images/maryorton.png'));
-INSERT INTO influencers (inf_name, ig_handle, img) VALUES ('Liz Adams', 'lizadams', LOAD_FILE('/images/lizadams.png'));
-INSERT INTO influencers (inf_name, ig_handle, img) VALUES ('Katie Staples', 'halfway_wholeistic', LOAD_FILE('/images/halfway_wholeistic.png'));
-INSERT INTO influencers (inf_name, ig_handle, img) VALUES ('Lisa Allen', 'lisa_allen', LOAD_FILE('/images/lisa_allen.png'));
-INSERT INTO influencers (inf_name, ig_handle, img) VALUES ('Kelly Larkin', 'kellyinthecity', LOAD_FILE('/images/kellyinthecity.png'));
+INSERT INTO influencers (inf_name, ig_handle, img) VALUES ('Jen Reed', 'thesisterstudioig', 'LOAD_FILE(/images/thesisterstudioig.png)');
+INSERT INTO influencers (inf_name, ig_handle, img) VALUES ('Amber Fillerup Clark', 'amberfillerup', 'LOAD_FILE(/images/amberfillerup.png)');
+INSERT INTO influencers (inf_name, ig_handle, img) VALUES ('Amy Jackson', 'fashion_jackson', 'LOAD_FILE(/images/fashion_jackson.png)');
+INSERT INTO influencers (inf_name, ig_handle, img) VALUES ('Julia Marcum', 'chrislovesjulia', 'LOAD_FILE(/images/chrislovesjulia.png)');
+INSERT INTO influencers (inf_name, ig_handle, img) VALUES ('Sandi + Shalia', 'thespoiledhome', 'LOAD_FILE(/images/thespoiledhome.png)');
+INSERT INTO influencers (inf_name, ig_handle, img) VALUES ('Brooke + Meggan', 'somewherelatley', 'LOAD_FILE(/images/somewherelately.png)');
+INSERT INTO influencers (inf_name, ig_handle, img) VALUES ('Mary Orton', 'maryorton', 'LOAD_FILE(/images/maryorton.png)');
+INSERT INTO influencers (inf_name, ig_handle, img) VALUES ('Liz Adams', 'lizadams', 'LOAD_FILE(/images/lizadams.png)');
+INSERT INTO influencers (inf_name, ig_handle, img) VALUES ('Katie Staples', 'halfway_wholeistic', 'LOAD_FILE(/images/halfway_wholeistic.png)');
+INSERT INTO influencers (inf_name, ig_handle, img) VALUES ('Lisa Allen', 'lisa_allen', 'LOAD_FILE(/images/lisa_allen.png)');
+INSERT INTO influencers (inf_name, ig_handle, img) VALUES ('Kelly Larkin', 'kellyinthecity', 'LOAD_FILE(/images/kellyinthecity.png)');

@@ -134,6 +134,21 @@ $(document).ready(function() {
     });
   });
 
+  //Navbar animation
+  $(window).on('scroll', function() {
+    $('#navigation').css('opacity', 'hide');
+    var scrollTop = $(window).scrollTop();
+    if (scrollTop <= 0) {
+      $('#navigation').stop().animate();
+      $('#navigation').animate({opacity:'hide'},500, function(){
+      $('#navigation').animate({opacity:'show'},1000);
+    })} else {
+      $('#navigation').stop().animate();
+      $('#navigation').animate({opacity:'hide'},500, function(){
+        $('#logo').animate({opacity:'show'},1000);
+      })}
+  });
+
   $("#cards").hide();
 
   //call influencers table SELECT *

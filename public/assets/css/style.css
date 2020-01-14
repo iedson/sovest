@@ -1,26 +1,37 @@
 /* naviagation & header */
 .mainHeader {
-    background: url(/assets/images/linh-nguyen-RJ-aKiGjpek-unsplash.jpg);
-    background-repeat: no-repeat;
-    background-size: 100%, 100%;
     color: white;
     font-family: 'Lato', sans-serif;
     font-size: 28px;
+    background: url(/assets/images/linh-nguyen-RJ-aKiGjpek-unsplash.jpg);
+    background-size: 100%, 100%;
+    background-repeat: no-repeat;
     margin-top: 2% 0;
-    padding-bottom: 1rem;
+    padding: 500px 64px 64px 64px;
+    
 }
 
-nav a{
+nav {
+    background-color: #2B2928;
     color: white;
+    display:inline-flex;
     font-family: 'Lato', sans-serif;
-    font-size: 25px;
-    padding: 0.8rem;
+    font-size: 18px;
+    padding: 0px 10px;
 }
+
 nav a.hover{
-    color:white;
+    text-decoration: underline;
+    color: white;
 }
 
 
+
+.headerImage {
+    max-width: 100vw;
+}
+
+/* Body Syles */
 body {
    background: whitesmoke;
    display:flex;
@@ -59,9 +70,6 @@ p{
     padding: 1rem;
 }
 
-.headerImage {
-    max-width: 100vw;
-}
   
 .label {
     font-weight: bold;

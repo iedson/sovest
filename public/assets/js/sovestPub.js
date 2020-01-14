@@ -1,5 +1,6 @@
 $(document).ready(function() {
   initGraph();
+  callInfl();
   $("#init").hide();
 
   let closeAnfStock = [];
@@ -58,6 +59,10 @@ $(document).ready(function() {
       }).then(function (dbResponse) {
         console.log(dbResponse);
         //console.log(dbResponse.igPostArray[0].inf_name);
+        let igDate = dbResponse.igPostArray[0].date_posted;
+        let splitDate = igDate.split("T")[0];
+        console.log(splitDate);
+        $('#influencerPost').append(splitDate);
       })
 
 
@@ -81,7 +86,7 @@ $(document).ready(function() {
               fill: false,
               data: closeJwnStock,
               backgroundColor: ["rgba(255, 159, 64, 0.2)"],
-              borderColor: ["rgba(133,144,101,1)"],
+              borderColor: ["rgba(210,124,139,1)"],
               borderWidth: 2
             },
             {
@@ -105,7 +110,7 @@ $(document).ready(function() {
               fill: false,
               data: closeWmtStock,
               backgroundColor: ["rgba(255, 159, 64, 0.2)"],
-              borderColor: ["rgba( 10,45,151,1)"],
+              borderColor: ["rgba( 142,99,107,1)"],
               borderWidth: 2
             },
             {
@@ -113,7 +118,7 @@ $(document).ready(function() {
               fill: false,
               data: closeExprStock,
               backgroundColor: ["rgba(255, 159, 64, 0.2)"],
-              borderColor: ["rgba( 152,33,13,1)"],
+              borderColor: ["rgba( 170,71,89,1)"],
               borderWidth: 2
             }
           ]
@@ -140,12 +145,11 @@ $(document).ready(function() {
     var scrollTop = $(window).scrollTop();
     if (scrollTop <= 0) {
       $('#navigation').stop().animate();
-      $('#navigation').animate({opacity:'hide'},500, function(){
-      $('#navigation').animate({opacity:'show'},1000);
+      $('#navigation').animate({opacity:'show'},1000, function(){
+      $('#navigation').animate({opacity:'hide'},500);
     })} else {
       $('#navigation').stop().animate();
-      $('#navigation').animate({opacity:'hide'},500, function(){
-        $('#logo').animate({opacity:'show'},1000);
+      $('#navigation').animate({opacity:'show'},1000, function(){
       })}
   });
 
@@ -180,81 +184,9 @@ $(document).ready(function() {
     location.reload();
   });
 
-  $(".stockInfl").on("click", function(event) {
-    igHandle = this.id;
-    var closeStock = [];
-    var date = [];
 
-    $.ajax({
-      url: "/api/influcencerposts/" + igHandle,
-      method: "GET"
-    }).then(function(dbResponse) {
-      console.log(dbResponse);
-      console.log(dbResponse.igPostArray[0].inf_name);
-      brand = dbResponse.igPostArray[0].brand;
 
-      $.ajax({
-        url: "/api/brand/" + brand,
-        method: "GET"
-      }).then(function(tickerResponse) {
-        console.log(tickerResponse);
-        getCode = tickerResponse[0].ticker_symbol.toString();
-        console.log(getCode);
-
-        $.ajax({
-          url: "/api/iex",
-          method: "GET"
-        }).then(function(response) {
-          iexcloudKey = response.apiKey;
-
-          var queryUrl = `https://cloud.iexapis.com/stable/stock/${getCode}/chart?token=${iexcloudKey}`;
-
-          $.ajax({
-            url: queryUrl,
-            method: "GET"
-          }).then(function(response) {
-            for (var i = 0; i < response.length; i++) {
-              //   console.log(response[i].close);
-              closeStock.push(response[i].close);
-              date.push(response[i].label);
-            }
-
-            var ctx = document.getElementById("myChart").getContext("2d");
-            //console.log(data);
-            console.log(closeStock);
-            var myChart = new Chart(ctx, {
-              type: "line",
-              data: {
-                labels: date,
-                datasets: [
-                  {
-                    label: getCode,
-                    fill: false,
-                    data: closeStock,
-                    backgroundColor: ["rgba(255, 159, 64, 0.2)"],
-                    borderColor: ["rgba(191.0, 135.0, 154.0, 1.0)"],
-                    borderWidth: 1
-                  }
-                ]
-              },
-              options: {
-                scales: {
-                  yAxes: [
-                    {
-                      ticks: {
-                        beginAtZero: true
-                        // instead of beginAtZero we can define ints for 'min' and 'max' values
-                      }
-                    }
-                  ]
-                }
-              }
-            });
-          });
-        });
-      });
-    });
-  });
+});
 
 
 function initGraph() {
@@ -287,11 +219,11 @@ function initGraph() {
         }
 
         if (getCode === "ANF"){
-          getColor = ["rgba(103,130, 91,1)"]
+          getColor = ["rgba: 103,130,91,1)"]
           console.log(getColor)
         }
         if (getCode === "JWN"){
-          getColor = ["rgba(133,144,101,1)"]
+          getColor = ["rgba(69,98,91,1)"]
           console.log(getColor)
 
         }
@@ -335,4 +267,85 @@ function initGraph() {
     });
   })
 }
+
+function callInfl(){
+$(".stockInfl").on("click", function(event) {
+  igHandle = this.id;
+  var closeStock = [];
+  var date = [];
+
+  $.ajax({
+    url: "/api/influcencerposts/" + igHandle,
+    method: "GET"
+  }).then(function(dbResponse) {
+    console.log(dbResponse);
+    console.log(dbResponse.igPostArray[0].inf_name);
+    brand = dbResponse.igPostArray[0].brand;
+    let igDate = dbResponse.igPostArray[0].date_posted;
+    let splitDate = igDate.split("T")[0];
+    console.log(splitDate);
+    $('#influencerPost').append(splitDate);
+
+    $.ajax({
+      url: "/api/brand/" + brand,
+      method: "GET"
+    }).then(function(tickerResponse) {
+      console.log(tickerResponse);
+      getCode = tickerResponse[0].ticker_symbol.toString();
+      console.log(getCode);
+
+      $.ajax({
+        url: "/api/iex",
+        method: "GET"
+      }).then(function(response) {
+        iexcloudKey = response.apiKey;
+
+        var queryUrl = `https://cloud.iexapis.com/stable/stock/${getCode}/chart?token=${iexcloudKey}`;
+
+        $.ajax({
+          url: queryUrl,
+          method: "GET"
+        }).then(function(response) {
+          for (var i = 0; i < response.length; i++) {
+            //   console.log(response[i].close);
+            closeStock.push(response[i].close);
+            date.push(response[i].label);
+          }
+
+          var ctx = document.getElementById("myChart").getContext("2d");
+          //console.log(data);
+          console.log(closeStock);
+          var myChart = new Chart(ctx, {
+            type: "line",
+            data: {
+              labels: date,
+              datasets: [
+                {
+                  label: getCode,
+                  fill: false,
+                  data: closeStock,
+                  backgroundColor: ["rgba(255, 159, 64, 0.2)"],
+                  borderColor: ["rgba(191.0, 135.0, 154.0, 1.0)"],
+                  borderWidth: 1
+                }
+              ]
+            },
+            options: {
+              scales: {
+                yAxes: [
+                  {
+                    ticks: {
+                      beginAtZero: true
+                      // instead of beginAtZero we can define ints for 'min' and 'max' values
+                    }
+                  }
+                ]
+              }
+            }
+          });
+        });
+      });
+    });
+  });
 });
+}

@@ -1,5 +1,6 @@
 // Set up MySQL connection.
 var mysql = require("mysql");
+var fs = require("fs");
 var connectionInfl;
 
 if (process.env.JAWSDB_URL) {
@@ -13,6 +14,7 @@ if (process.env.JAWSDB_URL) {
     database: "instagram_db"
   });
 }
+
 
 // Make connection.
 connectionInfl.connect(function (err) {

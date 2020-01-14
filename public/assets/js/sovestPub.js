@@ -5,6 +5,9 @@ $(document).ready(function() {
   let closeAnfStock = [];
   let closeJwnStock = [];
   let closeEbayStock = [];
+  let closeExprStock = [];
+  let closeTgtStock = [];
+  let closeWmtStock = [];
   var date = [];
 
   // Pull API key from .env
@@ -14,7 +17,7 @@ $(document).ready(function() {
   }).then(function(response) {
     var iexcloudKeyInit = response.apiKeySandbox;
 
-    var queryUrl = `https://sandbox.iexapis.com/stable/stock/market/batch?symbols=anf,jwn,ebay&types=chart&range=1m&last=5&token=${iexcloudKeyInit}`;
+    var queryUrl = `https://sandbox.iexapis.com/stable/stock/market/batch?symbols=anf,jwn,ebay,expr,tgt,wmt&types=chart&range=1m&last=5&token=${iexcloudKeyInit}`;
     $.ajax({
       url: queryUrl,
       method: "GET"
@@ -22,18 +25,32 @@ $(document).ready(function() {
       let ANF = response.ANF.chart;
       let JWN = response.JWN.chart;
       let EBAY = response.EBAY.chart;
+      let EXPR = response.EXPR.chart;
+      let TGT = response.TGT.chart;
+      let WMT = response.WMT.chart;
 
       for (let i = 0; i < ANF.length; i++) {
         closeAnfStock.push(ANF[i].close);
         date.push(ANF[i].label);
       }
-
       for (let i = 0; i < JWN.length; i++) {
         closeJwnStock.push(JWN[i].close);
       }
       for (let i = 0; i < EBAY.length; i++) {
         closeEbayStock.push(EBAY[i].close);
       }
+      for (let i = 0; i < EXPR.length; i++) {
+       closeExprStock.push(EXPR[i].close);
+      }
+      for (let i = 0; i < TGT.length; i++) {
+        closeTgtStock.push(TGT[i].close);
+  
+      }
+      for (let i = 0; i < WMT.length; i++) {
+        closeWmtStock.push(WMT[i].close);
+      }
+
+
 
       $.ajax({
         url: "/api/influcencerposts/kellyinthecity",
@@ -57,7 +74,7 @@ $(document).ready(function() {
               data: closeAnfStock,
               backgroundColor: ["rgba(255, 159, 64, 0.2)"],
               borderColor: ["rgba(103,130, 91,1)"],
-              borderWidth: 3
+              borderWidth: 2
             },
             {
               label: "Nordstrom",
@@ -65,7 +82,7 @@ $(document).ready(function() {
               data: closeJwnStock,
               backgroundColor: ["rgba(255, 159, 64, 0.2)"],
               borderColor: ["rgba(133,144,101,1)"],
-              borderWidth: 3
+              borderWidth: 2
             },
             {
               label: "Ebay",
@@ -73,7 +90,31 @@ $(document).ready(function() {
               data: closeEbayStock,
               backgroundColor: ["rgba(255, 159, 64, 0.2)"],
               borderColor: ["rgba( 50,118,101,1)"],
-              borderWidth: 3
+              borderWidth: 2
+            },
+            {
+              label: "Target",
+              fill: false,
+              data: closeTgtStock,
+              backgroundColor: ["rgba(255, 159, 64, 0.2)"],
+              borderColor: ["rgba( 40,128,101,1)"],
+              borderWidth: 2
+            },
+            {
+              label: "Walmart",
+              fill: false,
+              data: closeWmtStock,
+              backgroundColor: ["rgba(255, 159, 64, 0.2)"],
+              borderColor: ["rgba( 10,45,151,1)"],
+              borderWidth: 2
+            },
+            {
+              label: "Express",
+              fill: false,
+              data: closeExprStock,
+              backgroundColor: ["rgba(255, 159, 64, 0.2)"],
+              borderColor: ["rgba( 152,33,13,1)"],
+              borderWidth: 2
             }
           ]
         },
@@ -199,7 +240,7 @@ $(document).ready(function() {
       });
     });
   });
-});
+
 
 function initGraph() {
   $(".js-hook").on("click", function(event) {
@@ -277,16 +318,6 @@ function initGraph() {
         });
       });
     });
-  });
+  })
 }
-
-// call API for specific Stock and Influencer Posts
-// function stockInfluence() {
-//   $.ajax({
-//     url: "/api/influcencerposts/" + infIgHandle,
-//     method: "GET"
-//   }).then(function(dbResponse) {
-//     console.log(dbResponse);
-//     console.log(dbResponse.igPostArray[0].inf_name);
-//   });
-// }
+});

@@ -2,6 +2,7 @@ $(document).ready(function() {
   initGraph();
   callInfl();
   $("#init").hide();
+  $('#influencerPost').hide();
 
   let closeAnfStock = [];
   let closeJwnStock = [];
@@ -53,17 +54,6 @@ $(document).ready(function() {
         closeWmtStock.push(WMT[i].close);
       }
 
-      $.ajax({
-        url: "/api/influcencerposts/kellyinthecity",
-        method: "GET"
-      }).then(function (dbResponse) {
-        console.log(dbResponse);
-        //console.log(dbResponse.igPostArray[0].inf_name);
-        let igDate = dbResponse.igPostArray[0].date_posted;
-        let splitDate = igDate.split("T")[0];
-        console.log(splitDate);
-        $('#influencerPost').append(splitDate);
-      })
 
 
 
@@ -275,6 +265,22 @@ $(".stockInfl").on("click", function(event) {
   var closeStock = [];
   var date = [];
 
+
+  
+  $.ajax({
+    url: "/api/influcencerposts/kellyinthecity",
+    method: "GET"
+  }).then(function (dbResponse) {
+    console.log(dbResponse);
+    //console.log(dbResponse.igPostArray[0].inf_name);
+    let igDate = dbResponse.igPostArray[0].date_posted;
+    let splitDate = igDate.split("T")[0];
+    console.log(splitDate);
+    $('#influencerPost').show();
+    $('#influencerPost').append(splitDate);
+  })
+
+
   $.ajax({
     url: "/api/influcencerposts/" + igHandle,
     method: "GET"
@@ -285,7 +291,7 @@ $(".stockInfl").on("click", function(event) {
     let igDate = dbResponse.igPostArray[0].date_posted;
     let splitDate = igDate.split("T")[0];
     console.log(splitDate);
-    $('#influencerPost').append(splitDate);
+    //$('#influencerPost').append(splitDate);
 
     $.ajax({
       url: "/api/brand/" + brand,

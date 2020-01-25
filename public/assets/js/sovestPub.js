@@ -59,10 +59,7 @@ $(document).ready(function() {
       }).then(function (dbResponse) {
         console.log(dbResponse);
         //console.log(dbResponse.igPostArray[0].inf_name);
-        let igDate = dbResponse.igPostArray[0].date_posted;
-        let splitDate = igDate.split("T")[0];
-        console.log(splitDate);
-        $('#influencerPost').append(splitDate);
+
       })
 
 

@@ -1,5 +1,9 @@
+--MySQL Database
 CREATE DATABASE instagram_db;
-USE instagram_db;
+USE instagram_DB
+
+--JawsDB Database Name
+USE d392bjzqlh6g7g87;
 
 CREATE TABLE brands (
 	id int NOT NULL AUTO_INCREMENT,

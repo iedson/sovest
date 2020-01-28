@@ -1,4 +1,8 @@
+--MySQL Database Name
 USE instagram_db;
+
+--JawsDB Database Name
+USE d392bjzqlh6g7g87;
 
 INSERT INTO brands (brand, ticker_symbol) VALUES ('Walmart', 'WMT');
 INSERT INTO brands (brand, ticker_symbol) VALUES ('Abercrombie', 'ANF');
@@ -31,7 +35,7 @@ INSERT INTO influencer_post (inf_name, ig_handle, brand, date) VALUES ('Sandi + 
 INSERT INTO influencer_post (inf_name, ig_handle, brand, date) VALUES ('Brooke + Meggan', 'somewherelatley', 'Express', DATE('2019-11-29'));
 INSERT INTO influencer_post (inf_name, ig_handle, brand, date) VALUES ('Mary Orton', 'maryorton', 'Nordstrom', DATE('2019-11-25'));
 INSERT INTO influencer_post (inf_name, ig_handle, brand, date) VALUES ('Liz Adams', 'lizadams', 'Nordstrom', DATE('2019-11-25'));
-INSERT INTO influencer_post (inf_name, ig_handle, brand, date) VALUES ('Katie Staples', 'halfway_wholeistic', DATE('Walmart', '2019-11-26'));
+INSERT INTO influencer_post (inf_name, ig_handle, brand, date) VALUES ('Katie Staples', 'halfway_wholeistic', 'Walmart', DATE('2019-11-26'));
 INSERT INTO influencer_post (inf_name, ig_handle, brand, date) VALUES ('Lisa Allen', 'lisa_allen', 'Nordstrom', DATE('2019-11-26'));
 INSERT INTO influencer_post (inf_name, ig_handle, brand, date) VALUES ('Kelly Larkin', 'kellyinthecity', 'eBay', DATE('2019-11-30'));
 

@@ -10,11 +10,10 @@ if (process.env.JAWSDB_URL) {
     host: "localhost",
     port: 3306,
     user: "root",
-    password: "Isaiah40:31",
-    database: "instagram_db"
+    password: "password",
+    database: "instagram_db",
   });
 }
-
 
 // Make connection.
 connectionInfl.connect(function (err) {
